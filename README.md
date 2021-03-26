@@ -11,3 +11,5 @@ $tables = @('REG','REG_STU_CONTACT','REG_CONTACT','REG_ACADEMIC','REG_BUILDING',
 ````
 
 Then you can run the Download Definition using the Scripts from the eSchoolUpload project then download the files.
+
+The delimiter changed to PIPE to work with fields that have commas in them.
