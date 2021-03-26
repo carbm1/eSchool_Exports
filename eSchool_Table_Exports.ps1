@@ -108,7 +108,7 @@ Import-Csv .\eSchoolDatabase.csv | Where-Object { $tables -contains $PSItem.tblN
         "Description" = "$description"
         "FileName" = "$filename"
         "LastRunDate" = $null
-        "DelimitChar" = ","
+        "DelimitChar" = '|'
         "UseChangeFlag" = $False
         "TableAffected" = "$($tblName.ToLower())"
         "AdditionalSql" = $null
@@ -136,7 +136,7 @@ Import-Csv .\eSchoolDatabase.csv | Where-Object { $tables -contains $PSItem.tblN
             "FormatString" = $null
             "StartPosition" = $null
             "EndPosition" = $null
-            "FieldLength" = $PSItem.colMaxLength
+            "FieldLength" = [int]$PSItem.colMaxLength + 2 #This fixes the dates that are cut off.
             "ValidationTable" = $null
             "CodeColumn" = $null
             "ValidationList" = $null
